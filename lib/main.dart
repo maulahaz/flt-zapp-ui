@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'configs/x_configs.dart';
-import 'modules/home/x_homes.dart';
-// import 'modules/sliver_screen/x_sliver_screens.dart';
+// import 'modules/home/x_homes.dart';
+import 'modules/sliver_screen/x_sliver_screens.dart';
 // import 'modules/x_modules.dart';
 
 void main() {
@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
       theme: MyThemes.lightMode,
       darkTheme: MyThemes.darkMode,
       // home: const ModulesView(),
-      // home: SliverView(),
-      home: DashboardView(),
+      home: SliverView(),
+      // home: DashboardView(),
     );
   }
 }
