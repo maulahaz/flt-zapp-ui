@@ -8,7 +8,7 @@ const kBlue = Colors.blue;
 const kYellow = Colors.yellow;
 const kGrey = Color(0xFFC1C1C1);
 const kWhite = Color(0xFFFFFFFF);
-const kBlack = Color(0xFF101010);
+const kBlack = Color.fromARGB(255, 16, 16, 16);
 const kTransparent = Colors.transparent;
 
 //--App Colors Pallets:

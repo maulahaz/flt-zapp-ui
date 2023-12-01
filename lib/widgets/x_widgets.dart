@@ -1,5 +1,6 @@
 //--THIS APP CUSTOMS WIDGET:
-// export 'appbar.dart';
+export 'sliverappbar_wdg.dart';
+export 'sliver_searchbar_wdg.dart';
 
 //--MY USEABLE CUSTOMS WIDGET:
 export 'button_wdg.dart';

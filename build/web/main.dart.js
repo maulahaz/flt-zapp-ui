@@ -27,20 +27,27 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   const edge_insets = flutter_sdk.src__painting__edge_insets;
   const theme_data = flutter_sdk.src__material__theme_data;
   const scaffold = flutter_sdk.src__material__scaffold;
-  const app_bar = flutter_sdk.src__material__app_bar;
-  const text = flutter_sdk.src__widgets__text;
-  const preferred_size = flutter_sdk.src__widgets__preferred_size;
-  const media_query = flutter_sdk.src__widgets__media_query;
-  const basic = flutter_sdk.src__widgets__basic;
-  const flex = flutter_sdk.src__rendering__flex;
-  const elevated_button = flutter_sdk.src__material__elevated_button;
-  const container = flutter_sdk.src__widgets__container;
   const scroll_view = flutter_sdk.src__widgets__scroll_view;
+  const sliver = flutter_sdk.src__widgets__sliver;
+  const basic = flutter_sdk.src__widgets__basic;
+  const list_tile = flutter_sdk.src__material__list_tile;
+  const text$ = flutter_sdk.src__widgets__text;
+  const app_bar = flutter_sdk.src__material__app_bar;
+  const flexible_space_bar = flutter_sdk.src__material__flexible_space_bar;
+  const image = flutter_sdk.src__widgets__image;
+  const _network_image_web = flutter_sdk.src__painting___network_image_web;
+  const box_fit = flutter_sdk.src__painting__box_fit;
+  const preferred_size = flutter_sdk.src__widgets__preferred_size;
+  const container = flutter_sdk.src__widgets__container;
+  const box_decoration = flutter_sdk.src__painting__box_decoration;
+  const box_border = flutter_sdk.src__painting__box_border;
+  const material_button = flutter_sdk.src__material__material_button;
+  const progress_indicator = flutter_sdk.src__material__progress_indicator;
   var $46zapp_entry = Object.create(dart.library);
   var main = Object.create(dart.library);
   var web_plugin_registrant = Object.create(dart.library);
   var x_configs = Object.create(dart.library);
-  var x_homes = Object.create(dart.library);
+  var x_elastic_slivers = Object.create(dart.library);
   var colors$0 = Object.create(dart.library);
   var constants = Object.create(dart.library);
   var durations = Object.create(dart.library);
@@ -48,7 +55,21 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   var sizes = Object.create(dart.library);
   var styles = Object.create(dart.library);
   var themes = Object.create(dart.library);
-  var dashboard_vw = Object.create(dart.library);
+  var home_pg = Object.create(dart.library);
+  var x_widgets = Object.create(dart.library);
+  var sliverappbar_wdg = Object.create(dart.library);
+  var sliver_searchbar_wdg = Object.create(dart.library);
+  var button_wdg = Object.create(dart.library);
+  var x_configs$ = Object.create(dart.library);
+  var x_helpers = Object.create(dart.library);
+  var colors$1 = Object.create(dart.library);
+  var constants$ = Object.create(dart.library);
+  var durations$ = Object.create(dart.library);
+  var keys$ = Object.create(dart.library);
+  var sizes$ = Object.create(dart.library);
+  var styles$ = Object.create(dart.library);
+  var themes$ = Object.create(dart.library);
+  var widgets_hlp = Object.create(dart.library);
   var $toString = dartx.toString;
   dart._checkModuleNullSafetyMode(true);
   dart._checkModuleRuntimeTypes(false);
@@ -61,8 +82,8 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
     ObjectAndStackTraceTovoid: () => (T.ObjectAndStackTraceTovoid = dart.constFn(dart.fnType(dart.void, [core.Object, core.StackTrace])))(),
     ZoneAndZoneDelegateAndZone__Tovoid: () => (T.ZoneAndZoneDelegateAndZone__Tovoid = dart.constFn(dart.fnType(dart.void, [async.Zone, async.ZoneDelegate, async.Zone, core.String])))(),
-    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
-    BuildContextAndintToText: () => (T.BuildContextAndintToText = dart.constFn(dart.fnType(text.Text, [framework.BuildContext, core.int])))()
+    BuildContextAndintToPadding: () => (T.BuildContextAndintToPadding = dart.constFn(dart.fnType(basic.Padding, [framework.BuildContext, core.int])))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))()
   };
   const CT = Object.create({
     _: () => (C, CT)
@@ -509,13 +530,26 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         [TextStyle_color]: null,
         [TextStyle_inherit]: true
       });
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 12,
+        [EdgeInsets_right]: 12,
+        [EdgeInsets_top]: 12,
+        [EdgeInsets_left]: 12
+      });
     }
   }, false);
-  var C = Array(68).fill(void 0);
+  var C = Array(69).fill(void 0);
   var I = [
     "file:///zapp/project/lib/main.dart",
     "file:///zapp/project/lib/configs/themes.dart",
-    "file:///zapp/project/lib/modules/home/views/dashboard_vw.dart"
+    "file:///zapp/project/lib/modules/elastic_sliver/pages/home_pg.dart",
+    "package:flutter_app/widgets/sliverappbar_wdg.dart",
+    "package:flutter_app/widgets/sliver_searchbar_wdg.dart",
+    "package:flutter_app/widgets/button_wdg.dart",
+    "package:flutter_app/configs/themes.dart"
   ];
   $46zapp_entry.runAppGuarded = function runAppGuarded() {
     async.runZonedGuarded(core.Null, dart.fn(() => {
@@ -554,7 +588,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       return new main.MyApp.new({key: key});
     }
     build(context) {
-      return new app.MaterialApp.new({debugShowCheckedModeBanner: false, title: "Flutter App!!", theme: themes.MyThemes.lightMode, darkTheme: themes.MyThemes.darkMode, home: new dashboard_vw.DashboardView.new()});
+      return new app.MaterialApp.new({debugShowCheckedModeBanner: false, title: "Flutter App!!", theme: themes.MyThemes.lightMode, darkTheme: themes.MyThemes.darkMode, home: new home_pg.HomePage.new()});
     }
   };
   (main.MyApp.new = function(opts) {
@@ -931,35 +965,418 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       return theme_data.ThemeData.new({primarySwatch: colors.Colors.red, primaryColor: new ui.Color.new(4293947751), brightness: ui.Brightness.dark, fontFamily: "Poppins", inputDecorationTheme: new input_decorator.InputDecorationTheme.new({border: new input_border.OutlineInputBorder.new({borderRadius: new border_radius.BorderRadius.circular(20), borderSide: borders.BorderSide.none}), filled: true, fillColor: colors.Colors.grey.withOpacity(0.1)})});
     }
   }, false);
-  dashboard_vw.DashboardView = class DashboardView extends framework.StatelessWidget {
+  home_pg.HomePage = class HomePage extends framework.StatelessWidget {
     static ['_#new#tearOff'](opts) {
       let key = opts && 'key' in opts ? opts.key : null;
-      return new dashboard_vw.DashboardView.new({key: key});
+      return new home_pg.HomePage.new({key: key});
     }
     build(context) {
-      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("your title"), bottom: new preferred_size.PreferredSize.new({preferredSize: new ui.Size.new(media_query.MediaQuery.of(context).size.width, 40), child: new basic.Center.new({child: new basic.Row.new({mainAxisSize: flex.MainAxisSize.min, children: T.JSArrayOfWidget().of([new elevated_button.ElevatedButton.new({onPressed: dart.fn(() => {
-                    }, T.VoidTovoid()), child: new text.Text.new("Rolagem ")}), new elevated_button.ElevatedButton.new({onPressed: dart.fn(() => {
-                    }, T.VoidTovoid()), child: new text.Text.new("TOM ")})])})})})}), body: new container.Container.new({child: new scroll_view.ListView.builder({itemBuilder: dart.fn((context, index) => new text.Text.new(index[$toString]()), T.BuildContextAndintToText()), itemCount: 100})})});
+      return new scaffold.Scaffold.new({body: new scroll_view.CustomScrollView.new({slivers: T.JSArrayOfWidget().of([new sliverappbar_wdg.SliverAppBarBldr.new(), new sliver_searchbar_wdg.SliverSearchBldr.new(), new sliver.SliverList.new({delegate: new sliver.SliverChildBuilderDelegate.new(dart.fn((context, index) => new basic.Padding.new({padding: new edge_insets.EdgeInsets.only({left: 8, right: 8, bottom: 8}), child: new list_tile.ListTile.new({title: new text$.Text.new("Title " + dart.str(index + 1)), tileColor: new ui.Color.fromARGB(255, 0, 4, 246).withOpacity(index * 0.05)})}), T.BuildContextAndintToPadding()), {childCount: 20})})])})});
     }
   };
-  (dashboard_vw.DashboardView.new = function(opts) {
+  (home_pg.HomePage.new = function(opts) {
     let key = opts && 'key' in opts ? opts.key : null;
-    dashboard_vw.DashboardView.__proto__.new.call(this, {key: key});
+    home_pg.HomePage.__proto__.new.call(this, {key: key});
     ;
-  }).prototype = dashboard_vw.DashboardView.prototype;
-  dart.addTypeTests(dashboard_vw.DashboardView);
-  dart.addTypeCaches(dashboard_vw.DashboardView);
-  dart.setMethodSignature(dashboard_vw.DashboardView, () => ({
-    __proto__: dart.getMethods(dashboard_vw.DashboardView.__proto__),
+  }).prototype = home_pg.HomePage.prototype;
+  dart.addTypeTests(home_pg.HomePage);
+  dart.addTypeCaches(home_pg.HomePage);
+  dart.setMethodSignature(home_pg.HomePage, () => ({
+    __proto__: dart.getMethods(home_pg.HomePage.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(dashboard_vw.DashboardView, I[2]);
+  dart.setLibraryUri(home_pg.HomePage, I[2]);
+  sliverappbar_wdg.SliverAppBarBldr = class SliverAppBarBldr extends framework.StatelessWidget {
+    static ['_#new#tearOff'](opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      return new sliverappbar_wdg.SliverAppBarBldr.new({key: key});
+    }
+    build(context) {
+      return new app_bar.SliverAppBar.new({elevation: 0, pinned: true, backgroundColor: colors$1.kGrey.withOpacity(0.6), expandedHeight: 300, centerTitle: false, flexibleSpace: new flexible_space_bar.FlexibleSpaceBar.new({background: new image.Image.new({image: new _network_image_web.NetworkImage.new("https://picsum.photos/400"), fit: box_fit.BoxFit.cover})})});
+    }
+  };
+  (sliverappbar_wdg.SliverAppBarBldr.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    sliverappbar_wdg.SliverAppBarBldr.__proto__.new.call(this, {key: key});
+    ;
+  }).prototype = sliverappbar_wdg.SliverAppBarBldr.prototype;
+  dart.addTypeTests(sliverappbar_wdg.SliverAppBarBldr);
+  dart.addTypeCaches(sliverappbar_wdg.SliverAppBarBldr);
+  dart.setMethodSignature(sliverappbar_wdg.SliverAppBarBldr, () => ({
+    __proto__: dart.getMethods(sliverappbar_wdg.SliverAppBarBldr.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(sliverappbar_wdg.SliverAppBarBldr, I[3]);
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  sliver_searchbar_wdg.SliverSearchBldr = class SliverSearchBldr extends framework.StatelessWidget {
+    static ['_#new#tearOff'](opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      return new sliver_searchbar_wdg.SliverSearchBldr.new({key: key});
+    }
+    build(context) {
+      return new app_bar.SliverAppBar.new({elevation: 0, pinned: true, backgroundColor: colors$1.kGrey.withAlpha(230), bottom: new preferred_size.PreferredSize.new({preferredSize: new ui.Size.fromHeight(-10), child: new basic.SizedBox.new()}), flexibleSpace: new basic.Padding.new({padding: C[68] || CT.C68, child: new container.Container.new({height: 80, decoration: new box_decoration.BoxDecoration.new({color: colors$1.kWhite, border: box_border.Border.all()})})})});
+    }
+  };
+  (sliver_searchbar_wdg.SliverSearchBldr.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    sliver_searchbar_wdg.SliverSearchBldr.__proto__.new.call(this, {key: key});
+    ;
+  }).prototype = sliver_searchbar_wdg.SliverSearchBldr.prototype;
+  dart.addTypeTests(sliver_searchbar_wdg.SliverSearchBldr);
+  dart.addTypeCaches(sliver_searchbar_wdg.SliverSearchBldr);
+  dart.setMethodSignature(sliver_searchbar_wdg.SliverSearchBldr, () => ({
+    __proto__: dart.getMethods(sliver_searchbar_wdg.SliverSearchBldr.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(sliver_searchbar_wdg.SliverSearchBldr, I[4]);
+  button_wdg.MyButtons = class MyButtons extends core.Object {
+    static appPrimary(context, title, width, $function) {
+      return new material_button.MaterialButton.new({minWidth: width, onPressed: $function, child: new container.Container.new({width: width, alignment: alignment.Alignment.center, padding: new edge_insets.EdgeInsets.all(16 * 0.5), decoration: new box_decoration.BoxDecoration.new({gradient: colors$1.kAppGradientPrim, borderRadius: new border_radius.BorderRadius.all(new ui.Radius.circular(10)), border: box_border.Border.all({color: colors$1.kAppPrimaryDark, width: 2})}), child: new text$.Text.new(title, {style: widgets_hlp.getFont(16, {color: colors$1.kBlack})})})});
+    }
+    static defaultBtn(context, text, width, $function) {
+      return new material_button.MaterialButton.new({minWidth: width, padding: new edge_insets.EdgeInsets.all(20), onPressed: $function, child: new text$.Text.new(text, {textAlign: ui.TextAlign.center, style: new text_style.TextStyle.new({fontSize: 20}).copyWith({color: colors$1.kBlack, fontWeight: ui.FontWeight.bold})})});
+    }
+    static successBtn(context, text, width, $function) {
+      return new material_button.MaterialButton.new({minWidth: width, padding: new edge_insets.EdgeInsets.all(20), onPressed: $function, child: new text$.Text.new(text, {textAlign: ui.TextAlign.center, style: new text_style.TextStyle.new({fontSize: 20}).copyWith({color: colors$1.kBlack, fontWeight: ui.FontWeight.bold})})});
+    }
+    static ['_#new#tearOff']() {
+      return new button_wdg.MyButtons.new();
+    }
+  };
+  (button_wdg.MyButtons.new = function() {
+    ;
+  }).prototype = button_wdg.MyButtons.prototype;
+  dart.addTypeTests(button_wdg.MyButtons);
+  dart.addTypeCaches(button_wdg.MyButtons);
+  dart.setStaticMethodSignature(button_wdg.MyButtons, () => ['appPrimary', 'defaultBtn', 'successBtn']);
+  dart.setLibraryUri(button_wdg.MyButtons, I[5]);
+  dart.defineLazy(colors$1, {
+    /*colors$1.kRed*/get kRed() {
+      return C[2] || CT.C2;
+    },
+    /*colors$1.kGreen*/get kGreen() {
+      return C[3] || CT.C3;
+    },
+    /*colors$1.kBlue*/get kBlue() {
+      return C[4] || CT.C4;
+    },
+    /*colors$1.kYellow*/get kYellow() {
+      return C[16] || CT.C16;
+    },
+    /*colors$1.kGrey*/get kGrey() {
+      return C[28] || CT.C28;
+    },
+    /*colors$1.kWhite*/get kWhite() {
+      return C[29] || CT.C29;
+    },
+    /*colors$1.kBlack*/get kBlack() {
+      return C[30] || CT.C30;
+    },
+    /*colors$1.kTransparent*/get kTransparent() {
+      return C[31] || CT.C31;
+    },
+    /*colors$1.kAppPrimary*/get kAppPrimary() {
+      return C[16] || CT.C16;
+    },
+    /*colors$1.kAppPrimaryDark*/get kAppPrimaryDark() {
+      return C[32] || CT.C32;
+    },
+    /*colors$1.kAppPrimaryDark2*/get kAppPrimaryDark2() {
+      return C[33] || CT.C33;
+    },
+    /*colors$1.kAppPrimaryLight*/get kAppPrimaryLight() {
+      return C[34] || CT.C34;
+    },
+    /*colors$1.kAppSecondary*/get kAppSecondary() {
+      return C[35] || CT.C35;
+    },
+    /*colors$1.kAppSecondaryLight*/get kAppSecondaryLight() {
+      return C[36] || CT.C36;
+    },
+    /*colors$1.kAppBiruDark*/get kAppBiruDark() {
+      return C[37] || CT.C37;
+    },
+    /*colors$1.kAppBiruLight*/get kAppBiruLight() {
+      return new ui.Color.new(4278235065);
+    },
+    /*colors$1.kAppKuning*/get kAppKuning() {
+      return C[38] || CT.C38;
+    },
+    /*colors$1.kAppCoklat*/get kAppCoklat() {
+      return C[39] || CT.C39;
+    },
+    /*colors$1.kAppMerah*/get kAppMerah() {
+      return C[40] || CT.C40;
+    },
+    /*colors$1.kAppGrey*/get kAppGrey() {
+      return C[41] || CT.C41;
+    },
+    /*colors$1.kBgPrimary*/get kBgPrimary() {
+      return C[42] || CT.C42;
+    },
+    /*colors$1.kBgSecondary*/get kBgSecondary() {
+      return C[43] || CT.C43;
+    },
+    /*colors$1.kBgSuccess*/get kBgSuccess() {
+      return C[44] || CT.C44;
+    },
+    /*colors$1.kBgDanger*/get kBgDanger() {
+      return C[45] || CT.C45;
+    },
+    /*colors$1.kBgWarning*/get kBgWarning() {
+      return C[46] || CT.C46;
+    },
+    /*colors$1.kBgInfo*/get kBgInfo() {
+      return C[47] || CT.C47;
+    },
+    /*colors$1.kBgLight*/get kBgLight() {
+      return C[48] || CT.C48;
+    },
+    /*colors$1.kBgDark*/get kBgDark() {
+      return C[49] || CT.C49;
+    },
+    /*colors$1.bgDefault*/get bgDefault() {
+      return C[50] || CT.C50;
+    },
+    /*colors$1.kAppGradientPrim*/get kAppGradientPrim() {
+      return C[51] || CT.C51;
+    },
+    /*colors$1.kPrimaryGradient*/get kPrimaryGradient() {
+      return C[56] || CT.C56;
+    }
+  }, false);
+  dart.defineLazy(constants$, {
+    /*constants$.dbName*/get dbName() {
+      return "dbName.db";
+    },
+    /*constants$.APP_NAME*/get APP_NAME() {
+      return "V-Log";
+    },
+    /*constants$.APP_DESC*/get APP_DESC() {
+      return "Visitor Log";
+    },
+    /*constants$.TAG_LINE*/get TAG_LINE() {
+      return "Will never miss";
+    },
+    /*constants$.WA_ADMIN*/get WA_ADMIN() {
+      return "971562681844";
+    },
+    /*constants$.APP_VERSI*/get APP_VERSI() {
+      return "2.2111.6";
+    },
+    /*constants$.BASE_URL*/get BASE_URL() {
+      return "https://study-alone.000webhostapp.com/";
+    },
+    /*constants$.TIME_OUT_DURATION*/get TIME_OUT_DURATION() {
+      return 30;
+    },
+    /*constants$.tableCategoryName*/get tableCategoryName() {
+      return "Category";
+    },
+    /*constants$.colMainCategoryId*/get colMainCategoryId() {
+      return "ID";
+    },
+    /*constants$.colMainCategoryName*/get colMainCategoryName() {
+      return "Name";
+    },
+    /*constants$.colMainCategoryImage*/get colMainCategoryImage() {
+      return "Image";
+    },
+    /*constants$.tableQuestionName*/get tableQuestionName() {
+      return "Question";
+    },
+    /*constants$.colQuestionId*/get colQuestionId() {
+      return "ID";
+    },
+    /*constants$.colQuestionText*/get colQuestionText() {
+      return "QuestionText";
+    },
+    /*constants$.colQuestionIsImage*/get colQuestionIsImage() {
+      return "IsImageQuestion";
+    },
+    /*constants$.colQuestionImage*/get colQuestionImage() {
+      return "QuestionImage";
+    },
+    /*constants$.colQuestionAnswerA*/get colQuestionAnswerA() {
+      return "AnswerA";
+    },
+    /*constants$.colQuestionAnswerB*/get colQuestionAnswerB() {
+      return "AnswerB";
+    },
+    /*constants$.colQuestionAnswerC*/get colQuestionAnswerC() {
+      return "AnswerC";
+    },
+    /*constants$.colQuestionAnswerD*/get colQuestionAnswerD() {
+      return "AnswerD";
+    },
+    /*constants$.colQuestionCorrectAnswer*/get colQuestionCorrectAnswer() {
+      return "CorrectAnswer";
+    },
+    /*constants$.colQuestionCategoryId*/get colQuestionCategoryId() {
+      return "CategoryID";
+    },
+    /*constants$.sSuccess*/get sSuccess() {
+      return "Great";
+    },
+    /*constants$.sFail*/get sFail() {
+      return "Failed";
+    },
+    /*constants$.sError*/get sError() {
+      return "Eror";
+    },
+    /*constants$.sMsgSuccessExecution*/get sMsgSuccessExecution() {
+      return "Process sucessfully executed";
+    },
+    /*constants$.sMsgSuccessAddData*/get sMsgSuccessAddData() {
+      return "New data sucessfully added";
+    },
+    /*constants$.sMsgSuccessUpdateData*/get sMsgSuccessUpdateData() {
+      return "Data sucessfully updated";
+    },
+    /*constants$.sMsgSuccessDeleteData*/get sMsgSuccessDeleteData() {
+      return "Data sucessfully deleted";
+    },
+    /*constants$.sMsgFailExecution*/get sMsgFailExecution() {
+      return "Process failed to be executed";
+    },
+    /*constants$.sMsgFailAddData*/get sMsgFailAddData() {
+      return "New data failed to be added";
+    },
+    /*constants$.sMsgFailUpdateData*/get sMsgFailUpdateData() {
+      return "Data failed to be updated";
+    },
+    /*constants$.sMsgFailDeleteData*/get sMsgFailDeleteData() {
+      return "Data failed to be deleted";
+    },
+    /*constants$.sAuthFail*/get sAuthFail() {
+      return "User ID is not registered, or Wrong Password!";
+    },
+    /*constants$.kEmailValidatorRegExp*/get kEmailValidatorRegExp() {
+      return core.RegExp.new("^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\\.[a-zA-Z]+");
+    },
+    /*constants$.kUserNullError*/get kUserNullError() {
+      return "Please Enter your User ID";
+    },
+    /*constants$.kPassNullError*/get kPassNullError() {
+      return "Please Enter your Password";
+    },
+    /*constants$.kEmailNullError*/get kEmailNullError() {
+      return "Please Enter Valid Email";
+    },
+    /*constants$.kInvalidEmailError*/get kInvalidEmailError() {
+      return "Please Enter Valid Email";
+    },
+    /*constants$.kFieldNullError*/get kFieldNullError() {
+      return "The field cannot be empty";
+    },
+    /*constants$.kShortPassError*/get kShortPassError() {
+      return "Password is too short";
+    },
+    /*constants$.kMatchPassError*/get kMatchPassError() {
+      return "Passwords doesn't match";
+    },
+    /*constants$.kNamelNullError*/get kNamelNullError() {
+      return "Please Enter your name";
+    },
+    /*constants$.kPhoneNumberNullError*/get kPhoneNumberNullError() {
+      return "Please Enter your phone number";
+    },
+    /*constants$.kAddressNullError*/get kAddressNullError() {
+      return "Please Enter your address";
+    }
+  }, false);
+  dart.defineLazy(durations$, {
+    /*durations$.kAnimationDuration*/get kAnimationDuration() {
+      return C[60] || CT.C60;
+    },
+    /*durations$.kDefaultDuration*/get kDefaultDuration() {
+      return C[61] || CT.C61;
+    }
+  }, false);
+  dart.defineLazy(keys$, {
+    /*keys$.API_KEY*/get API_KEY() {
+      return "AIzaSyClb4GDpsXDFSvWumM4vyFj7dMT2ShTWak";
+    }
+  }, false);
+  dart.defineLazy(sizes$, {
+    /*sizes$.kDefaultPadding*/get kDefaultPadding() {
+      return 16;
+    },
+    /*sizes$.kMobileWidth*/get kMobileWidth() {
+      return 600;
+    },
+    /*sizes$.kTabletWidth*/get kTabletWidth() {
+      return 1200;
+    },
+    /*sizes$.kTabletBreakpointWidth*/get kTabletBreakpointWidth() {
+      return 768;
+    },
+    /*sizes$.kDesktopBreakpointWidth*/get kDesktopBreakpointWidth() {
+      return 1440;
+    },
+    /*sizes$.kSideMenuWidth*/get kSideMenuWidth() {
+      return 300;
+    },
+    /*sizes$.kNavigationRailWidth*/get kNavigationRailWidth() {
+      return 72;
+    }
+  }, false);
+  styles$.outlineInputBorder = function outlineInputBorder$() {
+    return new input_border.OutlineInputBorder.new({borderRadius: new border_radius.BorderRadius.circular(15), borderSide: new borders.BorderSide.new({color: colors$1.kAppPrimary})});
+  };
+  dart.defineLazy(styles$, {
+    /*styles$.kDefaultShadow*/get kDefaultShadow() {
+      return C[62] || CT.C62;
+    },
+    /*styles$.kTextStyle*/get kTextStyle() {
+      return C[66] || CT.C66;
+    },
+    /*styles$.kHeadingStyle*/get kHeadingStyle() {
+      return new text_style.TextStyle.new({fontSize: 21, fontWeight: ui.FontWeight.bold, color: colors.Colors.black, height: 1.5});
+    },
+    /*styles$.otpInputDecoration*/get otpInputDecoration() {
+      return new input_decorator.InputDecoration.new({contentPadding: new edge_insets.EdgeInsets.symmetric({vertical: 15}), border: styles$.outlineInputBorder(), focusedBorder: styles$.outlineInputBorder(), enabledBorder: styles$.outlineInputBorder()});
+    }
+  }, false);
+  themes$.MyThemes = class MyThemes extends core.Object {
+    static ['_#new#tearOff']() {
+      return new themes$.MyThemes.new();
+    }
+  };
+  (themes$.MyThemes.new = function() {
+    ;
+  }).prototype = themes$.MyThemes.prototype;
+  dart.addTypeTests(themes$.MyThemes);
+  dart.addTypeCaches(themes$.MyThemes);
+  dart.setLibraryUri(themes$.MyThemes, I[6]);
+  dart.setStaticFieldSignature(themes$.MyThemes, () => ['lightMode', 'darkMode']);
+  dart.defineLazy(themes$.MyThemes, {
+    /*themes$.MyThemes.lightMode*/get lightMode() {
+      return theme_data.ThemeData.new({primarySwatch: colors$1.kAppPrimary, primaryColor: colors$1.kAppPrimary, brightness: ui.Brightness.light, fontFamily: "Poppins", inputDecorationTheme: new input_decorator.InputDecorationTheme.new({border: new input_border.OutlineInputBorder.new({borderRadius: new border_radius.BorderRadius.circular(20), borderSide: borders.BorderSide.none}), filled: true, fillColor: colors.Colors.grey.withOpacity(0.1)})});
+    },
+    /*themes$.MyThemes.darkMode*/get darkMode() {
+      return theme_data.ThemeData.new({primarySwatch: colors.Colors.red, primaryColor: new ui.Color.new(4293947751), brightness: ui.Brightness.dark, fontFamily: "Poppins", inputDecorationTheme: new input_decorator.InputDecorationTheme.new({border: new input_border.OutlineInputBorder.new({borderRadius: new border_radius.BorderRadius.circular(20), borderSide: borders.BorderSide.none}), filled: true, fillColor: colors.Colors.grey.withOpacity(0.1)})});
+    }
+  }, false);
+  widgets_hlp.getFont = function getFont(fontSize, opts) {
+    let t0;
+    let color = opts && 'color' in opts ? opts.color : null;
+    let isBold = opts && 'isBold' in opts ? opts.isBold : false;
+    let fontName = opts && 'fontName' in opts ? opts.fontName : null;
+    return new text_style.TextStyle.new({fontSize: fontSize, color: (t0 = color, t0 == null ? colors$1.kBlack : t0), fontWeight: isBold ? ui.FontWeight.bold : ui.FontWeight.normal, fontFamily: fontName});
+  };
+  widgets_hlp.buildLoading = function buildLoading() {
+    return new basic.Center.new({child: new progress_indicator.CircularProgressIndicator.new()});
+  };
   dart.trackLibraries("zapp_user_main", {
     "file:///zapp/project/.zapp_entry.dart": $46zapp_entry,
     "file:///zapp/project/lib/main.dart": main,
     "file:///zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart": web_plugin_registrant,
     "file:///zapp/project/lib/configs/x_configs.dart": x_configs,
-    "file:///zapp/project/lib/modules/home/x_homes.dart": x_homes,
+    "file:///zapp/project/lib/modules/elastic_sliver/x_elastic_slivers.dart": x_elastic_slivers,
     "file:///zapp/project/lib/configs/colors.dart": colors$0,
     "file:///zapp/project/lib/configs/constants.dart": constants,
     "file:///zapp/project/lib/configs/durations.dart": durations,
@@ -967,16 +1384,30 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     "file:///zapp/project/lib/configs/sizes.dart": sizes,
     "file:///zapp/project/lib/configs/styles.dart": styles,
     "file:///zapp/project/lib/configs/themes.dart": themes,
-    "file:///zapp/project/lib/modules/home/views/dashboard_vw.dart": dashboard_vw
+    "file:///zapp/project/lib/modules/elastic_sliver/pages/home_pg.dart": home_pg,
+    "package:flutter_app/widgets/x_widgets.dart": x_widgets,
+    "package:flutter_app/widgets/sliverappbar_wdg.dart": sliverappbar_wdg,
+    "package:flutter_app/widgets/sliver_searchbar_wdg.dart": sliver_searchbar_wdg,
+    "package:flutter_app/widgets/button_wdg.dart": button_wdg,
+    "package:flutter_app/configs/x_configs.dart": x_configs$,
+    "package:flutter_app/helpers/x_helpers.dart": x_helpers,
+    "package:flutter_app/configs/colors.dart": colors$1,
+    "package:flutter_app/configs/constants.dart": constants$,
+    "package:flutter_app/configs/durations.dart": durations$,
+    "package:flutter_app/configs/keys.dart": keys$,
+    "package:flutter_app/configs/sizes.dart": sizes$,
+    "package:flutter_app/configs/styles.dart": styles$,
+    "package:flutter_app/configs/themes.dart": themes$,
+    "package:flutter_app/helpers/widgets_hlp.dart": widgets_hlp
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart","/zapp/project/lib/configs/colors.dart","/zapp/project/lib/configs/constants.dart","/zapp/project/lib/configs/durations.dart","/zapp/project/lib/configs/keys.dart","/zapp/project/lib/configs/sizes.dart","/zapp/project/lib/configs/styles.dart","/zapp/project/lib/configs/themes.dart","/zapp/project/lib/modules/home/views/dashboard_vw.dart"],"names":[],"mappings":"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","file":"main.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart","/zapp/project/lib/configs/colors.dart","/zapp/project/lib/configs/constants.dart","/zapp/project/lib/configs/durations.dart","/zapp/project/lib/configs/keys.dart","/zapp/project/lib/configs/sizes.dart","/zapp/project/lib/configs/styles.dart","/zapp/project/lib/configs/themes.dart","/zapp/project/lib/modules/elastic_sliver/pages/home_pg.dart","/zapp/project/lib/widgets/sliverappbar_wdg.dart","/zapp/project/lib/widgets/sliver_searchbar_wdg.dart","/zapp/project/lib/widgets/button_wdg.dart","/zapp/project/lib/helpers/widgets_hlp.dart"],"names":[],"mappings":"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","file":"main.js"}');
   // Exports:
   return {
     zapp__project__$46zapp_entry: $46zapp_entry,
     zapp__project__lib__main: main,
     zapp__project__$46dart_tool__dartpad__web_plugin_registrant: web_plugin_registrant,
     zapp__project__lib__configs__x_configs: x_configs,
-    zapp__project__lib__modules__home__x_homes: x_homes,
+    zapp__project__lib__modules__elastic_sliver__x_elastic_slivers: x_elastic_slivers,
     zapp__project__lib__configs__colors: colors$0,
     zapp__project__lib__configs__constants: constants,
     zapp__project__lib__configs__durations: durations,
@@ -984,7 +1415,21 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     zapp__project__lib__configs__sizes: sizes,
     zapp__project__lib__configs__styles: styles,
     zapp__project__lib__configs__themes: themes,
-    zapp__project__lib__modules__home__views__dashboard_vw: dashboard_vw
+    zapp__project__lib__modules__elastic_sliver__pages__home_pg: home_pg,
+    widgets__x_widgets: x_widgets,
+    widgets__sliverappbar_wdg: sliverappbar_wdg,
+    widgets__sliver_searchbar_wdg: sliver_searchbar_wdg,
+    widgets__button_wdg: button_wdg,
+    configs__x_configs: x_configs$,
+    helpers__x_helpers: x_helpers,
+    configs__colors: colors$1,
+    configs__constants: constants$,
+    configs__durations: durations$,
+    configs__keys: keys$,
+    configs__sizes: sizes$,
+    configs__styles: styles$,
+    configs__themes: themes$,
+    helpers__widgets_hlp: widgets_hlp
   };
 }));
 
