@@ -1,10 +1,12 @@
-# Project : xx 
+# Project : flt-zapp-ui
 ***************************************************************
-A Flutter project description 
+Flutter App by Zapp.run: UI Exercises
+- Elastic Sliver
+- Sliver Screen
 
 # Notes:
 - Started at: Week-xx of MM-YY
-- Flutter using version xx (Zapp.run [Link Here](https://zapp.run/editme/github-maulahazflt-zapp-ui-zqsy068wqsz0))
+- Flutter using version 3.7.3 (Zapp.run [Link Here](https://zapp.run/editme/github-maulahazflt-zapp-ui-zqsy068wqsz0))
 - State Mgt: xx
 - Backend: xx
 - DB: xx
@@ -16,4 +18,6 @@ A Flutter project description
 - [Random Images by picsum](https://picsum.photos/200)
 - [Colors](https://coolors.co/palettes/trending)
 - [SVG Icons](http://svgrepo.com)
-- [Food or Restaurant App UI - By The Flutter Way](https://www.youtube.com/watch?v=cvAw9wucmBc)
+- [Ytb: Food or Restaurant App UI - By The Flutter Way](https://www.youtube.com/watch?v=cvAw9wucmBc)
+- [Ytb: Fancy Scroll using sliver... widget - By VijayCreations](https://www.youtube.com/watch?v=NkOXry6jbTQ)
+- [Github: vijayinyoutube/elastic_slivers_app](https://github.com/vijayinyoutube/elastic_slivers_app)
