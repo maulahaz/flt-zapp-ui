@@ -5,7 +5,7 @@ Flutter App by Zapp.run: UI Exercises
 - Sliver Screen
 
 # Notes:
-- Started at: Week-xx of MM-YY
+- Started at: Week-1 of Dec23
 - Flutter using version 3.7.3 (Zapp.run [Link Here](https://zapp.run/editme/github-maulahazflt-zapp-ui-zqsy068wqsz0))
 - State Mgt: xx
 - Backend: xx
